@@ -147,8 +147,8 @@ class App(tk.Tk):
     def btnConectar_Click(self):
         try:
             conexao = mysql.connector.connect(
-                host="localhost",
-                user="root",
+                host="seu_host",
+                user="user",
                 password=""
             )
             mycursor = conexao.cursor()
@@ -163,10 +163,10 @@ class App(tk.Tk):
     def btnCriarTabela_Click(self):
         try:
             conexao = mysql.connector.connect(
-                host="localhost",
-                user="root",
+                host="seu_host",
+                user="user",
                 password="",
-                database="curso_db"
+                database="seu_db"
             )
             mycursor = conexao.cursor()
             sql = """
@@ -201,10 +201,10 @@ class App(tk.Tk):
         else:
             try:
                 conexao = mysql.connector.connect(
-                    host="localhost",
-                    user="root",
+                    host="seu_host",
+                    user="user",
                     password="",
-                    database="curso_db"
+                    database="seu_db"
                 )
                 mycursor = conexao.cursor()
                 sql = "INSERT INTO pessoas (nome,email) VALUES (%s, %s)"
@@ -228,10 +228,10 @@ class App(tk.Tk):
 
         try:
             conexao = mysql.connector.connect(
-                host="localhost",
-                user="root",
+                host="seu_host",
+                user="user",
                 password="",
-                database="curso_db"
+                database="seu_db"
             )
             mycursor = conexao.cursor()
             sql = "SELECT * FROM pessoas ORDER BY nome ASC"
@@ -271,10 +271,10 @@ class App(tk.Tk):
         else:
             try:
                 conexao = mysql.connector.connect(
-                    host="localhost",
-                    user="root",
+                    host="seu_host",
+                    user="user",
                     password="",
-                    database="curso_db"
+                    database="seu_db"
                 )
                 mycursor = conexao.cursor()
                 sql = "DELETE FROM pessoas WHERE nome = %s AND email = %s"
@@ -330,10 +330,10 @@ class App(tk.Tk):
                 emailRegistro = dadosRegistro["values"][1]
 
                 conexao = mysql.connector.connect(
-                    host="localhost",
-                    user="root",
+                    host="seu_host",
+                    user="user",
                     password="",
-                    database="curso_db"
+                    database="seu_db"
                 )
                 mycursor = conexao.cursor()
                 sql = "UPDATE pessoas SET nome = %s, email = %s WHERE nome = %s AND email = %s"
